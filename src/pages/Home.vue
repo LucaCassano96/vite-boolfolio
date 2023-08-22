@@ -6,13 +6,14 @@
 
             <div class="col-4 " v-for="project in projects" :key="project.id">
                 <h2 class="text-center">
-                   <!--  <router-link :to="{
-                        name: 'AppDetailsProject.vue',
+
+                    <router-link :to="{
+                        name: 'AppDetailsProject',
                         params: { id: project.id }
                     }">
-                        
-                    </router-link> -->
-                    {{ project.title }}
+                        {{ project.title }}
+                    </router-link>
+                    
                 </h2>
 
                 <div>

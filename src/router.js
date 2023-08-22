@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
- 
-/* import NotFound from './pages/NotFound.vue'; */
- 
+
+import NotFound from './pages/NotFound.vue';
+
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -12,12 +12,17 @@ const router = createRouter({
             component: () => import('./pages/Home.vue')
         },
         {
-            path: '/AppDetailsProjects',
-            name: 'AppDetailsProjects',
-            component: () => import('./pages/AppDetailsProjects.vue')
+            path: '/AppDetailsProject/:id',
+            name: 'AppDetailsProject',
+            component: () => import('./pages/AppDetailsProject.vue')
         },
-       
+        {
+            path: '/:pathMatch(.*)*',
+            name: 'NotFound',
+            component: NotFound
+        },
+
     ]
 });
- 
+
 export { router };
